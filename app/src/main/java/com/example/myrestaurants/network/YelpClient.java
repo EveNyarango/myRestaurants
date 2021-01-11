@@ -1,5 +1,8 @@
-package com.example.myrestaurants;//import java.io.IOException;
+package com.example.myrestaurants.network;//import java.io.IOException;
 
+
+import com.example.myrestaurants.Constants;
+import com.example.myrestaurants.network.YelpApi;
 
 import java.io.IOException;
 
@@ -10,7 +13,6 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.myrestaurants.BuildConfig.YELP_API_KEY;
 import static com.example.myrestaurants.Constants.YELP_BASE_URL;
 
 public class YelpClient {
@@ -25,7 +27,7 @@ public class YelpClient {
                         @Override
                         public Response intercept(Chain chain) throws IOException {
                             Request newRequest  = chain.request().newBuilder()
-                                    .addHeader("Authorization", YELP_API_KEY)
+                                    .addHeader("Authorization", Constants.YELP_API_KEY)
                                     .build();
                             return chain.proceed(newRequest);
                         }

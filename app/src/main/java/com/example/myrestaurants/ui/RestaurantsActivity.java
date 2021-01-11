@@ -1,16 +1,17 @@
-package com.example.myrestaurants;
+package com.example.myrestaurants.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myrestaurants.MyRestaurantsArrayAdapter;
+import com.example.myrestaurants.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

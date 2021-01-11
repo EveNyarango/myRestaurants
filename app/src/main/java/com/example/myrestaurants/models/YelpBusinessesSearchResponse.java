@@ -1,7 +1,12 @@
 
-package com.example.myrestaurants;
+package com.example.myrestaurants.models;
 
 import java.util.List;
+
+import com.example.myrestaurants.models.Category;
+import com.example.myrestaurants.models.Coordinates;
+import com.example.myrestaurants.models.Hour;
+import com.example.myrestaurants.models.Location;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
