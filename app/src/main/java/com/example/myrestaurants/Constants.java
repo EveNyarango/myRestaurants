@@ -1,3 +1,5 @@
+package com.example.myrestaurants;
+
 import com.example.myrestaurants.BuildConfig;
 
 public class Constants {
