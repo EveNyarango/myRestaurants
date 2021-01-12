@@ -1,4 +1,4 @@
-package com.example.myrestaurants;
+package com.example.myrestaurants.models;
 
 import com.example.myrestaurants.BuildConfig;
 

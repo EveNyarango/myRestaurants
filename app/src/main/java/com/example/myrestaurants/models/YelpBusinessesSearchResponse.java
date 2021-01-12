@@ -3,69 +3,22 @@ package com.example.myrestaurants.models;
 
 import java.util.List;
 
-import com.example.myrestaurants.models.Category;
-import com.example.myrestaurants.models.Coordinates;
-import com.example.myrestaurants.models.Hour;
-import com.example.myrestaurants.models.Location;
+import com.example.myrestaurants.models.Business;
+import com.example.myrestaurants.models.Region;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class YelpBusinessesSearchResponse {
 
-    @SerializedName("id")
+    @SerializedName("businesses")
     @Expose
-    private String id;
-    @SerializedName("alias")
+    private List<Business> businesses = null;
+    @SerializedName("total")
     @Expose
-    private String alias;
-    @SerializedName("name")
+    private Integer total;
+    @SerializedName("region")
     @Expose
-    private String name;
-    @SerializedName("image_url")
-    @Expose
-    private String imageUrl;
-    @SerializedName("is_claimed")
-    @Expose
-    private Boolean isClaimed;
-    @SerializedName("is_closed")
-    @Expose
-    private Boolean isClosed;
-    @SerializedName("url")
-    @Expose
-    private String url;
-    @SerializedName("phone")
-    @Expose
-    private String phone;
-    @SerializedName("display_phone")
-    @Expose
-    private String displayPhone;
-    @SerializedName("review_count")
-    @Expose
-    private Integer reviewCount;
-    @SerializedName("categories")
-    @Expose
-    private List<Category> categories = null;
-    @SerializedName("rating")
-    @Expose
-    private Double rating;
-    @SerializedName("location")
-    @Expose
-    private Location location;
-    @SerializedName("coordinates")
-    @Expose
-    private Coordinates coordinates;
-    @SerializedName("photos")
-    @Expose
-    private List<String> photos = null;
-    @SerializedName("price")
-    @Expose
-    private String price;
-    @SerializedName("hours")
-    @Expose
-    private List<Hour> hours = null;
-    @SerializedName("transactions")
-    @Expose
-    private List<String> transactions = null;
+    private Region region;
 
     /**
      * No args constructor for use in serialization
@@ -76,189 +29,39 @@ public class YelpBusinessesSearchResponse {
 
     /**
      * 
-     * @param displayPhone
-     * @param hours
-     * @param rating
-     * @param coordinates
-     * @param transactions
-     * @param photos
-     * @param url
-     * @param isClosed
-     * @param phone
-     * @param reviewCount
-     * @param price
-     * @param imageUrl
-     * @param name
-     * @param alias
-     * @param location
-     * @param id
-     * @param categories
-     * @param isClaimed
+     * @param total
+     * @param region
+     * @param businesses
      */
-    public YelpBusinessesSearchResponse(String id, String alias, String name, String imageUrl, Boolean isClaimed, Boolean isClosed, String url, String phone, String displayPhone, Integer reviewCount, List<Category> categories, Double rating, Location location, Coordinates coordinates, List<String> photos, String price, List<Hour> hours, List<String> transactions) {
+    public YelpBusinessesSearchResponse(List<Business> businesses, Integer total, Region region) {
         super();
-        this.id = id;
-        this.alias = alias;
-        this.name = name;
-        this.imageUrl = imageUrl;
-        this.isClaimed = isClaimed;
-        this.isClosed = isClosed;
-        this.url = url;
-        this.phone = phone;
-        this.displayPhone = displayPhone;
-        this.reviewCount = reviewCount;
-        this.categories = categories;
-        this.rating = rating;
-        this.location = location;
-        this.coordinates = coordinates;
-        this.photos = photos;
-        this.price = price;
-        this.hours = hours;
-        this.transactions = transactions;
+        this.businesses = businesses;
+        this.total = total;
+        this.region = region;
     }
 
-    public String getId() {
-        return id;
+    public List<Business> getBusinesses() {
+        return businesses;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setBusinesses(List<Business> businesses) {
+        this.businesses = businesses;
     }
 
-    public String getAlias() {
-        return alias;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
-    public String getName() {
-        return name;
+    public Region getRegion() {
+        return region;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Boolean getIsClaimed() {
-        return isClaimed;
-    }
-
-    public void setIsClaimed(Boolean isClaimed) {
-        this.isClaimed = isClaimed;
-    }
-
-    public Boolean getIsClosed() {
-        return isClosed;
-    }
-
-    public void setIsClosed(Boolean isClosed) {
-        this.isClosed = isClosed;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getDisplayPhone() {
-        return displayPhone;
-    }
-
-    public void setDisplayPhone(String displayPhone) {
-        this.displayPhone = displayPhone;
-    }
-
-    public Integer getReviewCount() {
-        return reviewCount;
-    }
-
-    public void setReviewCount(Integer reviewCount) {
-        this.reviewCount = reviewCount;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    public List<String> getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(List<String> photos) {
-        this.photos = photos;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public List<Hour> getHours() {
-        return hours;
-    }
-
-    public void setHours(List<Hour> hours) {
-        this.hours = hours;
-    }
-
-    public List<String> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(List<String> transactions) {
-        this.transactions = transactions;
+    public void setRegion(Region region) {
+        this.region = region;
     }
 
 }
