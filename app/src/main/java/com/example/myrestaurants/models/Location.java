@@ -5,6 +5,10 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Location {
 
     @SerializedName("address1")
@@ -124,6 +128,11 @@ public class Location {
 
     public void setDisplayAddress(List<String> displayAddress) {
         this.displayAddress = displayAddress;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s, %s, this.address1,this.city, this.state, this.zipcode");
     }
 
 }
